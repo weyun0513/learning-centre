@@ -1,7 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+export default defineConfig(({ command }) => {
+
+  return {
+    base:   '/learning-centre/', // dev 使用子路徑，prod 用根路徑（給自訂網域）
+    plugins: [react()],
+  };
+});

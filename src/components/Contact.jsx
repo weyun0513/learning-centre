@@ -18,7 +18,7 @@ function Contact() {
       try {
         const res = await axios.get(`${serverAPIUrl}/api/contact`);
         setContact(res.data[0]);
-        debugger
+      
       } catch (err) {
         console.error("聯絡資料取得失敗", err);
       }

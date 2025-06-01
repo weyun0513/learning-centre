@@ -20,11 +20,11 @@ const OrientationSchedule = () => {
     },
   ];
   return (
-      <div
-             className="min-h-screen w-screen bg-repeat bg-center bg-[length:400px]   px-4 py-10"
-            style={{ backgroundImage: `url('/assets/schedule_bg2.png')` }} // 這裡改成你的背景圖
-        >
-      
+    <div
+      className="min-h-screen w-screen bg-repeat bg-center bg-[length:400px]   px-4 py-10"
+      style={{ backgroundImage: `url('${import.meta.env.BASE_URL}assets/schedule_bg2.png')` }} // 改成你的背景圖
+    >
+
 
       {/* 套個半透明白底容器，讓排程內容易於閱讀 */}
 

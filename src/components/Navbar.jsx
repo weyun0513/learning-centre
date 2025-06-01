@@ -16,15 +16,15 @@ function Navbar() {
   };
 
   const menuItems = [
+
     { to: "/home", label: "Home" },
-    // { to: "/service", label: "About" },
     { to: "/schedules", label: "Schedule" },
     { to: "/home#school", label: "Location" },
-    { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
   ];
-
+  const [showQR, setShowQR] = useState(false);
   return (
+
     <div className="w-full shadow-md z-50 fixed top-0 left-0 bg-white">
       {/* 上層 Logo + 標題 + 按鈕 */}
       <div className="flex justify-between items-center px-4 py-3">
@@ -35,11 +35,11 @@ function Navbar() {
             <p className="text-sm italic text-lime-600">
               Inspiring & Promoting Excellence in Magpie
             </p>
-            
+
           </div>
-          
+
           <div className="place-items-end pl-20">
-            <img src={qrcode} alt="Logo" className="h-14" />
+            <img src={qrcode} alt="Logo" className="h-14"  onClick={() => setShowQR(true)} />
           </div>
         </div>
 
@@ -90,7 +90,7 @@ function Navbar() {
 
       {/* 下層導覽列（手機） */}
       {isMenuOpen && (
-        <div className="bg-purple-700 text-white flex flex-col md:hidden px-4 py-2 space-y-2">
+        <div className="bg-yellow-700 text-white flex flex-col md:hidden px-4 py-2 space-y-2">
           {menuItems.map((item) => (
             <Link
               key={item.to}
@@ -115,7 +115,18 @@ function Navbar() {
 
         </div>
       )}
+      {showQR && (
+        <div
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+          onClick={() => setShowQR(false)} // 點擊遮罩關閉
+        >
+          <div className="bg-white p-4 rounded shadow-xl">
+            <img src={qrcode} alt="Large QR Code" className="h-64 w-64" />
+          </div>
+        </div>
+      )}
     </div>
+    
   );
 }
 

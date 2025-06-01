@@ -13,9 +13,9 @@ import React, { useState, useEffect } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ScheduleMaintance from "./components/ScheduleMaintance";
 import AboutAdmin from "./components/AboutAdmin";
-
-
-
+import { Navigate } from "react-router-dom";
+import Price from "./components/BackaboutSummerCamp";
+import NotFound from "./components/NotFound";
 function App() {
 
 
@@ -33,37 +33,36 @@ function App() {
         return () => window.removeEventListener("storage", checkLogin);
     }, []);
     return (
-        <Router>
-            <div className="min-h-screen"> {/* 设置背景色为鹅黄色，并确保最小高度为屏幕高度 */}
-                <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-                <div className="w-full">
-                    <div className="grid place-items-center h-screen">
-                        <Routes>
-                            <Route path="/" element={<Layout><Home /></Layout>} />
-                            <Route path="/home" element={<Home />} />
-                            <Route path="/schedules" element={<Layout><OrientationSchedule /></Layout>} />
-                            <Route path="/contact" element={<Layout><Contact /></Layout>} />
-                            <Route path="/admin/slide" element={<SlideUploader />} />
-                            <Route path="/service" element={<Services />} />
-                            <Route path="/admin/cards" element={<CardManager />} />
-                            <Route path="/admin" element={<LoginForm />} />
-                            <Route path="/admin/adminPanel" element={<ProtectedRoute>
+        <div className="min-h-screen"> {/* 设置背景色为鹅黄色，并确保最小高度为屏幕高度 */}
+            <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+            <div className="w-full">
+                <div className="grid place-items-center h-screen">
+                    <Routes>
+                        <Route path="/" element={<Navigate to="/home" />} />
+                        <Route path="/home" element={<Home />} />
+                        <Route path="/schedules" element={<Layout><OrientationSchedule /></Layout>} />
+                        <Route path="/contact" element={<Layout><Contact /></Layout>} />
+                        <Route path="/admin/slide" element={<SlideUploader />} />
+                        <Route path="/service" element={<Services />} />
+                        <Route path="/admin/cards" element={<CardManager />} />
+                        <Route path="/admin" element={<LoginForm />} />
+                        <Route path="/admin/adminPanel" element={<ProtectedRoute>
 
-                                <AdminPanel />
-                            </ProtectedRoute>} />
- 
-                            {/* <Route path="/admin/ScheduleForm" element={<ScheduleForm />} /> */}
-                            <Route path="/admin/scheduleMaintance" element={<ProtectedRoute><Layout><ScheduleMaintance /></Layout></ProtectedRoute>} />
-                            <Route path="/admin/aboutAdmin" element={<ProtectedRoute>
-                                <AboutAdmin />
-                            </ProtectedRoute>} />
+                            <AdminPanel />
+                        </ProtectedRoute>} />
 
-                        </Routes>
+                        {/* <Route path="/admin/ScheduleForm" element={<ScheduleForm />} /> */}
+                        <Route path="/admin/scheduleMaintance" element={<ProtectedRoute><Layout><ScheduleMaintance /></Layout></ProtectedRoute>} />
+                        <Route path="/admin/aboutAdmin" element={<ProtectedRoute>
+                            <AboutAdmin />
+                        </ProtectedRoute>} />
+                        <Route path="/price" element={<Layout><Price /></Layout>} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
 
-                    </div>
                 </div>
             </div>
-        </Router>
+        </div>
     );
 }
 

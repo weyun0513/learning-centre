@@ -1,0 +1,40 @@
+# Node.js modules
+node_modules/
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# dotenv environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# macOS / Linux system files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+*.swp
+*.swo
+
+# Optional: coverage report folders
+coverage/
+.nyc_output/
+
+# GitHub Pages (gh-pages branch)
+gh-pages/
+
+# Local development SSL certs
+*.pem
+*.key
