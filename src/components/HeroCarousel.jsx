@@ -7,8 +7,8 @@ import "swiper/css/pagination";
 export default function HeroCarousel({ slides }) {
   const serverUrl= import.meta.env.VITE_SERVER_BASE_URL;
     return (
-      <section className="w-full flex justify-center">
-        <div className="max-w-[900px] w-full h-96 relative p-6">
+      <section className="w-full mt-20 sm:mt-40 md:mt-60 flex justify-center">
+        <div className="w-full min-h-[300px] h-[40vh] sm:h-[50vh] md:h-[60vh] max-h-[400px] bg-cover bg-center ">
           <Swiper
             modules={[Autoplay, Navigation, Pagination]}
             slidesPerView={1}
@@ -21,11 +21,11 @@ export default function HeroCarousel({ slides }) {
             {slides.map((slide, index) => (
               <SwiperSlide key={index}>
                 <div
-                  className="w-full h-[60vh] bg-cover bg-center flex items-center justify-center relative rounded-xl overflow-hidden"
+                  className="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] bg-cover bg-center flex items-center justify-center relative rounded-xl overflow-hidden"
                   style={{ backgroundImage: `url(${serverUrl}${slide.image})` }}
                 >
                   {/* 半透明遮罩 */}
-                  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                  <div className="absolute inset-0 bg-black bg-opacity-30"></div>
   
                   {/* 文字內容 */}
                   <div className="text-center text-white z-10 px-6">

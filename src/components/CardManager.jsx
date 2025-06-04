@@ -65,7 +65,7 @@ function CardManager() {
     const formData = new FormData();
     formData.append("image", file);
     try {
-      const res = await fetch(serverAPIUrl + "/upload-image", {
+      const res = await fetch(serverUrl + "/api/upload-image", {
         method: "POST",
         body: formData,
       });

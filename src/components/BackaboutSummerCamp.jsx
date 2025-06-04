@@ -1,6 +1,4 @@
 // src/pages/OrientationSchedule.jsx
-import React from "react";
-import banner from "../assets/home.jpg";
 import AboutSummercAMP from "./about-summer-camp";
 const Price = () => {
   

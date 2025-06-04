@@ -1,6 +1,5 @@
 // src/pages/OrientationSchedule.jsx
 import React from "react";
-import banner from "../assets/home.jpg";
 import SchedulePrintView from "../components/SchedulePrintView";
 const OrientationSchedule = () => {
   const data = [

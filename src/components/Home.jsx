@@ -1,8 +1,7 @@
-import Hero from "../components/Hero";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AssistanceCard from "../components/card";
- 
+import homeBg from '../assets/home_bg.png';
 import HeroCarousel from "./HeroCarousel";
 import SchoolSection from './SchoolSection'
 function Home() {
@@ -52,25 +51,25 @@ function Home() {
   }
 
   return (
-    <div >
-      <div className="p-2 mt-20 pt-10 bg-white  flex justify-center items-center  ">
+    <div
+      className="min-h-screen w-screen bg-center bg-[length:400px]  px-4 py-10"
+      style={{
+        backgroundImage: `url(${homeBg})`, backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+      }} // 改成你的背景圖
+    >
+      <div className=" sm:pt-[1000px]  md:pt-[500px] bg-white flex justify-center items-center  ">
         <HeroCarousel slides={slides} />
       </div>
-      {/* One-to-One Assistance Section */}
-      <div className="flex flex-col items-center">
-        {/* <h2 className="text-2xl font-bold text-center text-gray-600 mb-10">
-          One-to-One Assistance for Your Learner
-        </h2> */}
-        <div className="mx-auto w-[90%] flex flex-col md:flex-row justify-center gap-6">
+
+      <section className="relative z-20 bg-white/20 pt-10 flex flex-col items-center">
+        <div className="mx-auto w-full max-w-[1200px] min-w-[300px] px-4 flex flex-col md:flex-row justify-center gap-6">
           {cards.map((card, index) => (
             <AssistanceCard key={index} {...card} />
           ))}
         </div>
-        {/* <div className="p-8">
-          <UniqueSection imageUrl={assistanceImg} />
-        </div> */}
-        
-      </div>
+      </section>
       <div><SchoolSection /></div>
     </div>
 

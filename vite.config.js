@@ -5,7 +5,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ command }) => {
 
   return {
-    base:   '/learning-centre/', // dev 使用子路徑，prod 用根路徑（給自訂網域）
+    // base:   '/learning-centre/', // dev 使用子路徑，prod 用根路徑（給自訂網域）
+
+    base:   '/', // dev 使用子路徑，prod 用根路徑（給自訂網域）
     plugins: [react()],
   };
 });

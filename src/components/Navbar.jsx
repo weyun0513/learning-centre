@@ -31,9 +31,9 @@ function Navbar() {
         <div className="flex items-center gap-4">
           <img src={logo} alt="Logo" className="h-14" />
           <div>
-            <h1 className="text-2xl font-bold text-pink-800">MAGPIE LEARNING CENTER</h1>
+            <h1 className="text-[4vw] sm:text-[3vw] whitespace-nowrap overflow-hidden text-ellipsis font-bold text-pink-800">MAGPIE LEARNING CENTER</h1>
             <p className="text-sm italic text-lime-600">
-              Inspiring & Promoting Excellence in Magpie
+              Monday-Friday 8:30 a.m to 5:30 pm
             </p>
 
           </div>
@@ -118,7 +118,7 @@ function Navbar() {
       {showQR && (
         <div
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
-          onClick={() => setShowQR(false)} // 點擊遮罩關閉
+          onClick={() => setShowQR(false)}  
         >
           <div className="bg-white p-4 rounded shadow-xl">
             <img src={qrcode} alt="Large QR Code" className="h-64 w-64" />
