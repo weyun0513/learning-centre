@@ -57,7 +57,7 @@ function Home() {
         backgroundImage: `url(${homeBg})`, backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-      }} // 改成你的背景圖
+      }}  
     >
       <div className=" sm:pt-[1000px]  md:pt-[500px] bg-white flex justify-center items-center  ">
         <HeroCarousel slides={slides} />
